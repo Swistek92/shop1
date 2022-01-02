@@ -8,7 +8,7 @@ const products = [
     brand: 'Apple',
     category: 'Electronics',
     price: 89.99,
-    countInStock: 10,
+    countInStock: 0,
     rating: 4.5,
     numReviews: 12,
   },
@@ -20,7 +20,7 @@ const products = [
       'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
     brand: 'Apple',
     category: 'Electronics',
-    price: 599.99,
+    price: 600.99,
     countInStock: 7,
     rating: 4.0,
     numReviews: 8,
@@ -79,4 +79,4 @@ const products = [
   },
 ]
 
-export default products
+module.exports = products

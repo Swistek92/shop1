@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run client\" \"npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swistek92/shop1.git"
+  },
+  "author": "piotreck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swistek92/shop1/issues"
+  },
+  "homepage": "https://github.com/Swistek92/shop1#readme",
+  "dependencies": {
+    "concurrently": "^6.5.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2"
+  }
+}
