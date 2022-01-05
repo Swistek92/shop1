@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 // import products from '../products'
+
 import Product from '../components/Product.js';
 import Message from '../components/Message.js';
 import Loader from '../components/Loader.js';
