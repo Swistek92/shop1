@@ -2,8 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import { addToCart, removeFromCart } from '../actions/cartActions';
-import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
-
+import {
+  useParams,
+  Link,
+  useLocation,
+  useNavigate,
+  Navigate,
+} from 'react-router-dom';
 import {
   Row,
   Col,
@@ -13,14 +18,19 @@ import {
   Card,
   FormControl,
 } from 'react-bootstrap';
+
+// import { userInfo } from '../actions/userActions';
 // import { param } from 'express/lib/request';
 const CartScreen = () => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   const params = useParams();
   const productId = params.id;
   const location = useLocation();
   const qty = new URLSearchParams(location.search).get('qty');
   const dispatch = useDispatch();
-  const naviage = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
@@ -30,14 +40,17 @@ const CartScreen = () => {
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
+
   const checkoutHandler = () => {
-    naviage(`/login?redirect=shipping`);
-    console.log('checkout');
+    if (!userInfo) {
+      navigate('/login');
+    } else {
+      navigate('/shipping');
+    }
   };
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-  console.log(cartItems);
   return (
     <div>
       <Row>
