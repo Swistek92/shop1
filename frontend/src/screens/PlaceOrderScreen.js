@@ -34,7 +34,7 @@ const PlaceOrderScreen = () => {
       navigate(`/order/${order._id}`);
     }
   }, [navigate, success, order]);
-  console.log(cart.shippingAddress);
+
   const placeOrderHandler = () => {
     dispatch(
       createOrder({
