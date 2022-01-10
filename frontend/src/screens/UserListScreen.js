@@ -35,6 +35,7 @@ const UserListScreen = () => {
 
   return (
     <div>
+      <h1> Users</h1>
       {loading ? (
         <Loader />
       ) : error ? (
