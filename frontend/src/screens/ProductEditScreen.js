@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Image } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -127,7 +127,6 @@ const ProductEditScreen = () => {
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
             </Form.Group>
-
             <Form.Group controlId='image'>
               <Form.Label>Image</Form.Label>
               <Form.Control
@@ -136,13 +135,18 @@ const ProductEditScreen = () => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.File
+              <Form.Control
+                type='file'
                 id='image-file'
-                label='Choose File'
+                label='Choose file'
                 custom
                 onChange={uploadFileHandler}
-              ></Form.File>
+              />
+
               {uploading && <Loader />}
+            </Form.Group>
+            <Form.Group>
+              <Image src={product.image} fluid style={{ maxHeight: '30vh' }} />
             </Form.Group>
 
             <Form.Group controlId='brand'>

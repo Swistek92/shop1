@@ -1,5 +1,5 @@
 import path from 'path';
-
+import morgan from 'morgan';
 import express from 'express';
 // import products from './data/products.js'
 import dotenv from 'dotenv';
@@ -18,6 +18,10 @@ connectDB();
 const app = express();
 
 app.use(express.json());
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 app.get('/', (req, res) => {
   res.send('Api is running');
