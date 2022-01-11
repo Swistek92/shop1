@@ -16,7 +16,7 @@ const SchearchBox = () => {
   return (
     <Form
       onSubmit={submitHandler}
-      className='d-flex'
+      className=' d-none d-sm-flex'
       style={{ position: 'absolute', left: '0', marginLeft: '25vw' }}
     >
       <Form.Control
