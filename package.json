@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Swistek92/shop1#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.28.1",
     "colors": "^1.4.0",
     "concurrently": "^6.5.1",
     "dotenv": "^10.0.0",
