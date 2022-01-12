@@ -146,7 +146,12 @@ const ProductEditScreen = () => {
               {uploading && <Loader />}
             </Form.Group>
             <Form.Group>
+              <Form.Label>Currnet Image</Form.Label>
               <Image src={product.image} fluid style={{ maxHeight: '30vh' }} />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Image after change</Form.Label>
+              <Image src={image} fluid style={{ maxHeight: '30vh' }} />
             </Form.Group>
 
             <Form.Group controlId='brand'>
